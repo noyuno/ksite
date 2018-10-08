@@ -1,0 +1,9 @@
+[Unit]
+Description=Animation Programs iCalendar Service
+
+[Service]
+User=noyuno
+ExecStart=/var/www/html/bin/anime-ical
+
+[Install]
+WantedBy=multi-user.target
