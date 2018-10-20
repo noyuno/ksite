@@ -73,8 +73,11 @@ var print = function () {
                 // notification
                 if (notifyarray.indexOf(vv["PID"]) == -1) {
                     notifyarray.push(vv["PID"]);
-                    var n = new Notification(
-                        "まもなく" + vv["ChName"] + "で「" + vv["Title"] + "」が始まります");
+                    var text = "まもなく" + vv["ChName"] + "で「" + vv["Title"] + "」";
+                    if (vv["Count"] != null) {
+                        text += "#" + vv["Count"];
+                    }
+                    var n = new Notification(text + "が始まります");
                     setTimeout(n.close.bind(n), 10 * 1000);
                 }
             } else if (nowdt - startdt > 0) {
